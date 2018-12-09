@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Multimodal Project Site</title>
+        <link href="bootstrap.min.css" rel="stylesheet">
+        <link href="main.css" rel="stylesheet">
+    </head>
+
+    <body>
+        <nav class="navbar row">
+            <div class="col-sm-4">
+                Climate Change
+            </div>
+            <div class="col-sm-7"></div>               
+            <div class="col-sm-1">
+                About
+            </div>
+        </nav>
+        
+
+        <div class="container-fluid" id="mainPage">
+            <div class="row">
+                <div class="col-sm-12 col-lg-6 info-section">
+                    <div id="leftCircle" onmouseover="leftBold()" onmouseout="leftUnbold()" onclick="infoRedirect()">
+                        <h1 class="mainLabel">What is Climate Change?</h1>
+                    </div>
+                </div>
+                <div class="col-sm-12 col-lg-6 action-section">
+                    <div id="rightCircle" onmouseover="rightBold()" onmouseout="rightUnbold()" onclick="actionRedirect()">
+                        <h1 class="mainLabel">What Can I Do About It?</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- NOTE TO SELF add poluted city with red filter for left background and Earth for right circle -->
+        <!-- also white text with black border -->
+        <script type="text/javascript">
+
+            var totalWidth = window.innerWidth;
+            var totalHeight = window.innerHeight;
+            var halfWidth = totalWidth / 2;
+            //circle is 40% of the screen width
+            var circleWidth = totalWidth * 0.4;
+            //how much the circle is shifted over; since circle is 40% of the screen width, need 10% padding
+            var circleXShift = totalWidth * .1;
+
+            var mainPage = document.getElementById("mainPage");
+            mainPage.style.height = totalHeight;
+
+            var leftCircle = document.getElementById("leftCircle");
+            var rightCircle = document.getElementById("rightCircle");
+
+            leftCircle.style.background = "#c00";
+            rightCircle.style.background = "#060";
+            leftCircle.style.borderRadius = "50%";
+            rightCircle.style.borderRadius = "50%";
+
+            var rescaleCircles = function(){
+                var diameter = leftCircle.getBoundingClientRect().width;
+                var diameter2 = rightCircle.getBoundingClientRect().width;
+                var radius = diameter / 2;
+                var radius2 = diameter2 / 2;
+
+                leftCircle.style.height = diameter+"px";
+                rightCircle.style.height = diameter2+diameter2*0.02+"px";
+            }
+            
+            rescaleCircles();
+            
+            //rightCircle.style.backgroundImage = "url(planet-earth.jpg)"
+            //rightCircle.style.backgroundSize = String(rightCircle.getBoundingClientRect().width*1.1) + "px " + String(rightCircle.getBoundingClientRect().height*1.2) + "px";
+            //rightCircle.style.backgroundPosition = "-"+String(rightCircle.getBoundingClientRect().width*.1)+"px "+"-"+String(rightCircle.getBoundingClientRect().height*0.1)+"px";
+
+            onresize = function(){
+                rescaleCircles();
+            }
+            
+            var leftBold = function(){
+                leftCircle.style.boxShadow = "2px 2px 3px 0px white";
+            }
+
+            var leftUnbold = function(){
+                leftCircle.style.boxShadow = "none";
+            }
+
+            var rightBold = function(){
+                rightCircle.style.boxShadow = "2px 2px 3px 0px white";
+            }
+
+            var rightUnbold = function(){
+                rightCircle.style.boxShadow = "none";
+            }
+
+            var infoRedirect = function(){
+                window.location = "info.html";
+            }
+
+            var actionRedirect = function(){
+                window.location = "action.html";
+            }
+            //coordinates/dimensions of circle
+            //x and y are the origin points
+            var r = circleWidth / 2;
+            var x = circleXShift + r;
+            var x2 = halfWidth + circleXShift + r;
+            var y = 50 + r;
+
+            onmousemove = function(e){}
+        </script>
+    </body>
+</html>

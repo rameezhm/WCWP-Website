@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>What Action Can I Take?</title>
+        <link href="bootstrap.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link href="main.css" rel="stylesheet">
+    </head>
+    <body>
+        <nav class="navbar row">
+            <div class="col-sm-4">
+                Climate Change
+            </div>
+            <div class="col-sm-7"></div>               
+            <div class="col-sm-1">
+                About
+            </div>
+        </nav>
+        
+
+        <div class="container-fluid light-body">
+            <br>
+            <br>
+            <div class="row">
+                <h3>How Can Your Actions Help?</h3>
+                
+            </div>
+            <div class="row">
+                <h4>Move the sliders around to see how reducing certain activities reduces your carbon footprint</h4>
+            </div>
+            <br>
+            <div class="row">
+                <div class="offset-sm-3"></div>
+                <div class="col-sm-6">
+                    <h4>Turning Down The Thermostat</h4>
+                </div>
+            </div>
+            <div class="row slider-container">
+                <div class="offset-sm-3"></div>
+                <div class="col-sm-6">
+                    <input type="range" min="0" max="100" value="0" class="slider" id="slider1">
+                    
+                </div>
+                <div class="col-sm-3 thermostat-img">
+                    <h1 id="slider-val1"></h1>
+                </div>
+            </div>
+            <div class="row">
+                <div class="offset-sm-3"></div>
+                <div class="col-sm-6">
+                    <h4>Using Less Water</h4>
+                    <p>It takes a lot of energy to process and move water</p>
+                </div>
+            </div>
+            <div class="row slider-container">
+                <div class="offset-sm-3"></div>
+                <div class="col-sm-6">
+                    <input type="range" min="0" max="100" value="0" class="slider" id="slider2">
+                    
+                </div>
+                <div class="col-sm-3 water-img">
+                    <h1 id="slider-val2"></h1>
+                </div>
+            </div>
+            <div class="row">
+                <div class="offset-sm-3"></div>
+                <div class="col-sm-6">
+                    <h4>Reduce How Much Trash You Throw Away</h4>
+                </div>
+            </div>
+            <div class="row slider-container">
+                <div class="offset-sm-3"></div>
+                <div class="col-sm-6">
+                    <input type="range" min="0" max="100" value="0" class="slider" id="slider3">
+                    <p id="slider-val3"></p>
+                </div>
+            </div>
+
+            <div class="row social-media">
+                <div class="col-sm-12">
+                    <i class="fa fa-facebook-official fa-3x" aria-hidden="true"></i>
+                    <i class="fa fa-twitter fa-3x" aria-hidden="true"></i>
+                    <i class="fa fa-instagram fa-3x" aria-hidden="true"></i>
+                </div>
+                
+            </div>
+        </div>
+        
+        <script type="text/javascript" src="sliders.js"></script>
+    </body>    
+</html
