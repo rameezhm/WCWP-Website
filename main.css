@@ -150,6 +150,19 @@
     color: brown;
 }
 
+.fa-lightbulb-o {
+    font-size: 8rem;
+    position: relative;
+    left: 10%;
+    color: rgb(224, 224, 66);
+}
+
+.fa-trash-o {
+    font-size: 8rem;
+    position: relative;
+    left: 5%;
+}
+
 .light-body {
     background-color: #eee;
 }
@@ -161,6 +174,21 @@
 .water {
     visibility: hidden;
     height: 0;
+}
+
+#slider-val4 {
+    position: relative;
+    left: 8%;
+}
+
+#slider-val3 {
+    position: relative;
+    left: 13%;
+}
+
+#slider-val5 {
+    position: relative;
+    left: 13%;
 }
 
 /* Main Elements------------------------------------------- */

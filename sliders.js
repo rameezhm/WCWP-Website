@@ -13,11 +13,11 @@ outputValue3.innerHTML =  slider3.value + "%";
 
 var slider4 = document.getElementById("slider4");
 var outputValue4 = document.getElementById("slider-val4");
-outputValue4.innerHTML =  slider4.value + "%";
+outputValue4.innerHTML =  slider4.value/10 + " Miles Per Day";
 
 var slider5 = document.getElementById("slider5");
 var outputValue5 = document.getElementById("slider-val5");
-outputValue5.innerHTML =  slider5.value + "%";
+outputValue5.innerHTML =  slider5.value/2 + " Bulbs";
 
 
 //water cup
@@ -52,11 +52,11 @@ slider3.oninput = function() {
 }
 
 slider4.oninput = function() {
-    outputValue4.innerHTML =  this.value + "%";
+    outputValue4.innerHTML =  this.value/10 + " Miles Per Day";
 }
 
 slider5.oninput = function() {
-    outputValue5.innerHTML =  this.value + "%";
+    outputValue5.innerHTML =  this.value/2 + " Bulbs";
 }
 
 //resize window function
