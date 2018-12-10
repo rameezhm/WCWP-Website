@@ -83,12 +83,30 @@
     text-shadow: 2px 2px black;
 }
 
+.flooding {
+    background: 
+    /* top, transparent red, faked with gradient */ 
+    linear-gradient(
+        rgba(0, 0, 255, 0.2), 
+        rgba(0, 0, 255, 0.2)
+    ),
+    /*underlying image*/
+    url("duck-river-flood.jpg");
+    background-size: 100%;
+    color: white;
+    padding-top: 2%;
+    padding-bottom: 2%;
+
+    text-shadow: 2px 2px black;
+}
+
 .transition {
     text-align: center;
     font-style: none;
     color: white;
     background-color: #555;
     padding: 1% 0 1%;
+    text-shadow: 2px 2px black;
 }
 
 /* Action Page ---------------------------------------------- */
