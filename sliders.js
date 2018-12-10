@@ -35,12 +35,17 @@ setThermoSize();
 outputValue1.style.position = "relative";
 outputValue1.style.top = "33%";
 
+var totalCarbonSaved = 0;
+var carbonSavedLabel = document.getElementById("carbonSaved");
+
+
 
 //add the slider handler functions
 slider1.oninput = function() {
     outputValue1.innerHTML = "-" + (this.value)/10 + "&#176";
     var val = this.value;
     thermostat.style.background = "rgb("+(214-2*val)+", 27, "+parseInt(27+parseInt(val))+ ")";
+    updateCarbonSaved();
 }
 
 slider2.oninput = function() {
@@ -49,15 +54,41 @@ slider2.oninput = function() {
 
 slider3.oninput = function() {
     outputValue3.innerHTML =  this.value + "%";
+    updateCarbonSaved();
 }
 
 slider4.oninput = function() {
     outputValue4.innerHTML =  this.value/10 + " Miles Per Day";
+    updateCarbonSaved();
 }
 
 slider5.oninput = function() {
-    outputValue5.innerHTML =  this.value/2 + " Bulbs";
+    outputValue5.innerHTML =  parseInt(this.value/2) + " Bulbs";
+    updateCarbonSaved();
 }
+
+var updateCarbonSaved = function() {
+    var co2PerMile = 0.907;
+    var co2Saved = slider4.value/10 * co2PerMile;
+
+    var co2PerKWH = 14.867444;
+    var KWHforConditioning = 216.89;
+    var savingsPerDegree = KWHforConditioning * 0.045 * co2PerKWH;
+    var tempSavings = savingsPerDegree * slider1.value/10;
+
+    var trashSavings =  692 * slider3.value/100;
+
+    //how many hours the lights are on a day
+    var lightHours = 5;
+    var lightSavings = 0.048 * co2PerKWH * slider5.value/2 * lightHours;
+
+    totalCarbonSaved = parseInt((co2Saved + tempSavings + lightSavings)*365 + trashSavings);
+
+    carbonSavedLabel.innerHTML = totalCarbonSaved;
+}
+
+//update it initially
+updateCarbonSaved();
 
 //resize window function
 onresize = function(){
