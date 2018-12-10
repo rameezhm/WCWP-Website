@@ -23,3 +23,4 @@ slider2.oninput = function() {
 slider3.oninput = function() {
     outputValue3.innerHTML =  this.value + "%";
 }
+
